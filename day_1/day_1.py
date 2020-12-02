@@ -1,7 +1,7 @@
 #%%
 import itertools
 import numpy as np
-filename = "p1/input.txt"
+filename = "day_1/input.txt"
 with open(filename) as f:
     input = f.readlines()
 
