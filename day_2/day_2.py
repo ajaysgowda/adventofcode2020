@@ -1,12 +1,11 @@
 #%%
 
-def split_data(input_data):
+def split_data(data_to_split):
     """
-
-    :param input_data:
+    :param data_to_split:
     :return: tuple of (limits, rep_char, password)
     """
-    data = input_data.split(' ')
+    data = data_to_split.split(' ')
     password = data[2]
     rep_char = data[1].strip(':')
     limits = tuple(map(int, data[0].split('-')))
@@ -75,6 +74,7 @@ def number_of_valid_pass_puzzle_2(input_list: list):
         if check_for_validity_puzzle_2(*data):
             num_of_valid += 1
     return num_of_valid
+
 
 #%%
 # read input data
