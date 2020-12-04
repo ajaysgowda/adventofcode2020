@@ -122,7 +122,6 @@ def count_valid_ids(ids: List[dict], req_fields: set, part: str):
     :return:
     """
     if part == 'part2':
-        print('part2 validation')
         validator = check_valid_id_part_2
     else:
         validator = check_valid_id_part_1
