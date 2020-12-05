@@ -88,25 +88,20 @@ def get_seat_id(boarding_pass):
     return row * 8 + col
 
 
-def find_non_consecutive_seat(lst: list):
+def find_missing_seat(lst: list):
     """
     find missing seat
     :param lst:
     :return:
     """
 
-    lst.sort()
-    min_val = lst[0]
-    max_val = lst[-1]
+    lst_set = set(lst)
+    min_val = min(lst_set)
+    max_val = max(lst_set)
 
-    temp = lst.copy()
-    temp.pop(0)
-    temp.append(max_val+1)
+    full_set = {x for x in range(min_val, max_val+1)}
 
-    diff = list(map(operator.sub, temp, lst))
-    index = diff.index(2)
-    seat = index + min_val + 1
-    return seat
+    return full_set.difference(lst_set).pop()
 
 
 #%%
@@ -134,6 +129,6 @@ print(max_seat_id)
 
 seat_ids = list(map(get_seat_id, input_data))
 
-missing_seat_id = find_non_consecutive_seat(seat_ids)
+missing_seat_id = find_missing_seat(seat_ids)
 
 print(missing_seat_id)
