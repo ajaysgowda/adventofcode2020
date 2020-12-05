@@ -95,9 +95,11 @@ def find_missing_seat(lst: list):
     :return:
     """
 
+    lst.sort()
     lst_set = set(lst)
-    min_val = min(lst_set)
-    max_val = max(lst_set)
+
+    min_val = lst[0]
+    max_val = lst[-1]
 
     full_set = {x for x in range(min_val, max_val+1)}
 
@@ -128,7 +130,7 @@ print(max_seat_id)
 # part 2
 
 seat_ids = list(map(get_seat_id, input_data))
-
 missing_seat_id = find_missing_seat(seat_ids)
 
 print(missing_seat_id)
+
