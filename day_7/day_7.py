@@ -10,13 +10,13 @@ def rule_to_dict(rule: str):
     rule_scrubbed = rule.replace(' bags', '').replace('bag', '')
     outer_bag, inner_bags = rule_scrubbed.split('contain')
     inner_bags = inner_bags.lstrip(' ').rstrip('.').split(', ')
-    inner_bags = dict(qty_type_str_dict(bag) for bag in inner_bags)
+    inner_bags = dict(qty_type_str_key_val_pair(bag) for bag in inner_bags)
     return {outer_bag.strip(): inner_bags}
 
 
-def qty_type_str_dict(string):
+def qty_type_str_key_val_pair(string):
     """
-    '1 bright white' -> {'bright white': 1}
+    '1 bright white' -> ('bright white', 1)
     :return: 
     """
     string = string.strip()
