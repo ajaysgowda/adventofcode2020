@@ -96,7 +96,7 @@ input_data = [(x.strip()) for x in input_data]
 grouped_data = sep_to_grouped_list(input_data, '')
 ans = sum_of_all_group_positive_ans(grouped_data)
 
-print(ans)
+print(f'Total number of "yes" answers in each group: {ans}')
 
 
 #%%
@@ -104,5 +104,6 @@ print(ans)
 
 grouped_data = sep_to_grouped_list(input_data, '')
 ans = sum_of_all_group_common_ans(grouped_data)
+print(f'Total number of common "yes" answers in each group: {ans}')
 
 print(ans)

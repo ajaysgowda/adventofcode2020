@@ -58,7 +58,7 @@ def count_trees_in_path(data, c_move, r_move):
 #%% part 1
 trees = count_trees_in_path(data=input_data, c_move=3, r_move=1)
 
-print(trees)
+print(f'Trees in path:{trees}')
 
 #%% part 2
 
@@ -69,4 +69,5 @@ tree_counts = []
 for direction in directions:
     tree_counts.append(count_trees_in_path(input_data, *direction))
 
-print(np.prod(tree_counts))
+ans = np.prod(tree_counts)
+print(f'Product of trees in path:{ans}')

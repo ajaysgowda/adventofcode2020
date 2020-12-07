@@ -124,7 +124,7 @@ input_data = [(x.strip()) for x in input_data]
 #%%
 # part 1
 max_seat_id = max(map(get_seat_id, input_data))
-print(max_seat_id)
+print(f'Highest seat ID on a boarding pass: {max_seat_id}')
 
 #%%
 # part 2
@@ -132,5 +132,6 @@ print(max_seat_id)
 seat_ids = list(map(get_seat_id, input_data))
 missing_seat_id = find_missing_seat(seat_ids)
 
-print(missing_seat_id)
+print(f'The ID of your seat: {missing_seat_id}')
+
 

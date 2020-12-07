@@ -86,11 +86,17 @@ with open(filename) as f:
 input_data = [(x.strip()) for x in input_data]
 
 #%%
-# test = ['1-3 a: abcde', '1-3 b: cdefg', '2-9 c: ccccccccc']
+# part 2
 
 num_of_valid_pass_puzzle_1 = number_of_valid_pass_puzzle_1(input_data)
 
+print(f'Number of valid passwords (part 1): {num_of_valid_pass_puzzle_1}')
+
+#%%
+# part 2
+
 num_of_valid_pass_puzzle_2 = number_of_valid_pass_puzzle_2(input_data)
+print(f'Number of valid passwords (part 2): {num_of_valid_pass_puzzle_2}')
 
 
 

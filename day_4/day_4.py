@@ -105,8 +105,6 @@ def check_valid_id_part_2(iden: dict, req_fields: set):
         return False
     else:
         for key, value in iden.items():
-            print(key, value)
-            print(field_validator(key, value))
             if not field_validator(key, value):
                 return False
         return True
@@ -241,7 +239,6 @@ def validate_pid(val: str):
     :return:
     """
     if len(val) == 9:
-        int(val)
         return True
     else:
         return False
@@ -268,6 +265,9 @@ id_dict = convert_data_list_to_dict(input_data)
 
 required_fields = {'pid', 'iyr', 'eyr', 'hgt', 'byr', 'ecl', 'hcl'}
 valid_p1 = count_valid_ids(id_dict, required_fields, part='part1')
+
+print(f'Valid passports: {valid_p1}')
+
 # %%
 # part 2
 
@@ -275,3 +275,4 @@ id_dict = convert_data_list_to_dict(input_data)
 
 required_fields = {'pid', 'iyr', 'eyr', 'hgt', 'byr', 'ecl', 'hcl'}
 valid_p2 = count_valid_ids(id_dict, required_fields, part='part2')
+print(f'Valid passports: {valid_p2}')
