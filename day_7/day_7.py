@@ -1,7 +1,4 @@
 # %%
-from itertools import groupby
-
-
 def rule_to_dict(rule: str):
     """
     convert one bag rule to a dict
