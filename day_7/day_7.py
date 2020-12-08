@@ -1,5 +1,8 @@
 # %%
-def rule_to_dict(rule: str):
+from typing import Tuple
+
+
+def rule_to_dict(rule: str) -> dict:
     """
     convert one bag rule to a dict
     :param lst:
@@ -14,7 +17,7 @@ def rule_to_dict(rule: str):
     return {outer_bag.strip(): inner_bags}
 
 
-def qty_type_str_key_val_pair(string):
+def qty_type_str_key_val_pair(string: str) -> Tuple[str, int]:
     """
     '1 bright white' -> ('bright white', 1)
     :return: 
@@ -26,7 +29,7 @@ def qty_type_str_key_val_pair(string):
         return string[2:], int(string[0])
 
 
-def get_rules_dict(rules):
+def get_rules_dict(rules: list) -> dict:
     """
     generate rules dict out of rules list
     :param rules:
@@ -38,7 +41,7 @@ def get_rules_dict(rules):
     return rules_dict
 
 
-def find_bag(bag, parent_bag, rules: dict):
+def find_bag(bag: str, parent_bag: str, rules: dict) -> bool:
     """
     Recursively find if a bag is within another bag
     :param bag:
@@ -56,7 +59,7 @@ def find_bag(bag, parent_bag, rules: dict):
                 return True
 
 
-def find_number_bags_that_contain_specific_bag(bag, parent_bags, rules):
+def find_number_bags_that_contain_specific_bag(bag: str, parent_bags: str, rules: dict) -> int:
     """
     Recursively find number of bags within a bag
     :param bag: 
@@ -71,7 +74,7 @@ def find_number_bags_that_contain_specific_bag(bag, parent_bags, rules):
     return count
 
 
-def bag_count_within_bag(bag, rules):
+def bag_count_within_bag(bag: str, rules: dict) -> int:
     """
     Count number of bags with in bags
     :param bag:
